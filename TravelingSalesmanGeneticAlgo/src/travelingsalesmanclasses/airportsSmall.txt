@@ -1,0 +1,12 @@
+10
+Montgomery -86.3667 32.3833
+Juneau -134.5833 58.3667
+Phoenix -112.0167 33.4333
+Little_Rock -92.2333 34.7333
+Sacramento -121.5000 38.5167
+Denver -104.8667 39.7500
+Hartford_Brainard_Field -72.6500 41.7333
+Dover -75.4667 39.1333
+Washington_National -77.0333 38.8500
+Tallahassee -84.3667 30.3833
+

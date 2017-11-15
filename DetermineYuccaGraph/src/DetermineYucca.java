@@ -1,4 +1,5 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -6,19 +7,20 @@ import java.util.Scanner;
 
 public class DetermineYucca {
 
-	public static void main(String[] args) {
-		FileReader reader = new FileReader("Input0.txt");
+	public static void main(String[] args) throws FileNotFoundException {
+		FileReader reader = new FileReader("src/Input6.txt");
 		BufferedReader buff = new BufferedReader(reader);
+		Scanner input = new Scanner(buff);
 		int[][] matrix = new int[6][6];
 		for (int i = 0; i < 6; i++){
 			for (int j = 0; j < 6; j++) {
-				if (buff.hasNextInt()) {
+				if (input.hasNextInt()) {
 					int temp = input.nextInt();
 					matrix[i][j] = temp;
-					System.out.println(temp);
 				}
 			}
 		}
+		input.close();
 		System.out.println(Arrays.deepToString(matrix));
 		if (checkMatrix(matrix)) {
 			System.out.println("the graph is yucca");
@@ -45,7 +47,7 @@ public class DetermineYucca {
 	
 	public static boolean checkRow(int[][] matrix, int pointer) {
 		for (int y = 0; y < 6; y++) {
-			if(matrix[y][pointer] == 0 && y != pointer) {
+			if(matrix[pointer][y] == 0 && y != pointer) {
 				System.out.print(pointer);
 				System.out.println(y);
 				System.out.println(matrix[pointer][y]);
